@@ -1,0 +1,17 @@
+
+dist: trusty
+sudo: required
+
+language: java
+
+deploy:
+  provider: elasticbeanstalk
+  zip_file: target/bookrating-0.0.1-SNAPSHOT.jar
+  access_key_id: $ACCESSKEYID
+  secret_access_key:
+    secure: "$SECRETACCESSKEY"
+  region: eu-central-1
+  app: Bookstore
+  env: Bookstore-env
+  skip_cleanup: true
+bucket_name: elasticbeanstalk-eu-central-1-364022542967
