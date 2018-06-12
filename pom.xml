@@ -56,7 +56,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
+            <!--
             <plugin>
                 <groupId>com.lazerycode.jmeter</groupId>
                 <artifactId>jmeter-maven-plugin</artifactId>
@@ -75,6 +75,7 @@
                     <generateReports>true</generateReports>
                 </configuration>
             </plugin>
+            -->
         </plugins>
     </build>
 
