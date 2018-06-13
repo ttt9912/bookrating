@@ -26,7 +26,7 @@ pipeline {
                 sh 'mvn verify'
             }
         }
-        stage('Performance') {
+        stage('Install') {
             steps {
                 sh 'mvn install'
             }
