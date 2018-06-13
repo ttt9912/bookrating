@@ -21,9 +21,10 @@ pipeline {
                 }
             }
         }
-        stage('Performance')
+        stage('Performance') {
             steps {
                 sh 'mvn verify'
             }
+        }
     }
 }
