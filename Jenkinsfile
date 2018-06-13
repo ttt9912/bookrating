@@ -26,9 +26,9 @@ pipeline {
                 sh 'mvn verify'
             }
         }
-        stage('LoadTest'){
+        stage('Performance') {
             steps {
-                bzt 'src/test/jmeter/loadTest.jmx'
+                sh 'mvn install'
             }
         }
     }
