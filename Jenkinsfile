@@ -26,5 +26,10 @@ pipeline {
                 sh 'mvn verify'
             }
         }
+        stage('LoadTest'){
+            steps {
+                bzt 'src/test/jmeter/loadTest.jmx'
+            }
+        }
     }
 }
