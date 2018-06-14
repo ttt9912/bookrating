@@ -32,11 +32,8 @@ pipeline {
             }
         }
         stage('Confirm') {
-            def userInput = input(
-             id: 'userInput', message: 'Confirm?', parameters: [
-             [$class: 'TextParameterDefinition', defaultValue: 'uat', description: 'Environment', name: 'env']
-            ])
-            echo ("Env: "+userInput)
+            def doesJavaRock = input(message: 'Do you like Java?', ok: 'Yes', parameters: [booleanParam(defaultValue: true, description: 'If you like Java, just push the button',name: 'Yes?')])
+            echo "Java rocks?:" + doesJavaRock
         }
         stage('Deploy-Trigger') {
             steps {
