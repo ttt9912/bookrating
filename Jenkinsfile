@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Deploy-Trigger') {
             steps {
-                echo 'Deploying...'
+                build job: 'bookstore-mvn'
             }
         }
     }
