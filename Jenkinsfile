@@ -32,7 +32,11 @@ pipeline {
             }
         }
         stage('Confirm') {
-            input('Do you want to proceed?')
+            def userInput = input(
+             id: 'userInput', message: 'Confirm?', parameters: [
+             [$class: 'TextParameterDefinition', defaultValue: 'uat', description: 'Environment', name: 'env']
+            ])
+            echo ("Env: "+userInput)
         }
         stage('Deploy-Trigger') {
             steps {
