@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Deploy-Trigger') {
             steps {
-                build job: 'bookstore-mvn'
+                build job: 'bookrating-mvn'
             }
         }
     }
