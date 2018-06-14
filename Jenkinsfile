@@ -33,8 +33,11 @@ pipeline {
         }
         stage('Confirm') {
             steps {
-                def doesJavaRock = input(message: 'Do you like Java?', ok: 'Yes', parameters: [booleanParam(defaultValue: true, description: 'If you like Java, just push the button',name: 'Yes?')])
-                echo "Java rocks?:" + doesJavaRock
+                script {
+                    env.RELEASE_SCOPE = input message: 'User input required', ok: 'Release!',
+                            parameters: [choice(name: 'RELEASE_SCOPE', choices: 'patch\nminor\nmajor', description: 'What is the release scope?')]
+                }
+                echo "${env.RELEASE_SCOPE}"
             }
         }
         stage('Deploy-Trigger') {
