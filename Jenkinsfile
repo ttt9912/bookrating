@@ -31,5 +31,13 @@ pipeline {
                 sh 'mvn install'
             }
         }
+        stage('Confirm') {
+            input('Do you want to proceed?')
+        }
+        stage('Deploy-Trigger') {
+            steps {
+                echo 'Deploying...'
+            }
+        }
     }
 }
